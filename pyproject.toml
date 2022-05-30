@@ -2,10 +2,11 @@
 name = "jiraboard"
 version = "0.1.0"
 description = ""
-authors = ["Brian <yes229@nyu.edu>"]
+authors = ["Brian <yes229@nyu.edu>", "Matt <mrz262@stern.nyu.edu>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+Django = "4.0"
 
 [tool.poetry.dev-dependencies]
 
