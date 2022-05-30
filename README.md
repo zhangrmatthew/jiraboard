@@ -74,3 +74,28 @@
     "tasks": "Array<String>"
 }
 ```
+## API Endpoints
+
+### Create Board
+
+```json
+{
+    "username":"refactor",
+    "password":"refactor"
+}
+```
+
+### Get All Boards
+
+```json
+{
+    <no payload>
+}
+```
+
+### Get Specific Board 
+
+```json
+pass thru uri
+boards/<str:id>
+```
