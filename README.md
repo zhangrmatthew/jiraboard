@@ -36,7 +36,7 @@
     "created": "date",
     "assignement__date": "date",
     "description": "string",
-    "acceptance__criteriai": "string",
+    "acceptance__criteria": "string",
     "column": "string" // column ID
 }
 ```
