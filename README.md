@@ -2,7 +2,7 @@
 
 ## Features
 
--   Columns (hard-code)
+-   Columns
     -   Todo
     -   Implementation
     -   Code Review
