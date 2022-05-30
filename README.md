@@ -99,3 +99,26 @@
 pass thru uri
 boards/<str:id>
 ```
+
+### Create User
+```json
+{
+    "username":"test",
+    "password":"test"
+}
+```
+
+### Get All Users
+
+```json
+{
+    <no payload>
+}
+```
+
+### Get Specific User 
+
+```json
+pass thru uri
+boards/<str:id>
+```
