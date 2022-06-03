@@ -9,16 +9,22 @@ from .models import Board, User
 
 class BoardViewSet(APIView):
     """
-    List all boards, or create a new board.
+    List all boards
     """
     def get(self, request, format=None):
         boards = Board.objects.all()
         serializer = BoardSerializer(boards, many=True)
         return Response(serializer.data)
 
+class BoardCreate(APIView):
+    '''
+    Create a board
+    '''
     def post(self, request, format=None):
         serializer = BoardSerializer(data=request.data)
         if serializer.is_valid():
+            #get resulting user model, then update board?
+            
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -59,7 +65,7 @@ class UserViewSet(APIView):
 
 class SingleUserViewSet(APIView):
     """
-    Get specific board
+    Get specific user
     """
     def get_object(self, pk):
         try:
@@ -72,4 +78,8 @@ class SingleUserViewSet(APIView):
         serializer = UserSerializer(users)
         return Response(serializer.data)
 
+    #add board to user here 
+
     #TODO add linkage to boards and tasks when created some
+
+ 

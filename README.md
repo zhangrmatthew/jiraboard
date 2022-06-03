@@ -80,8 +80,8 @@
 
 ```json
 {
-    "username":"refactor",
-    "password":"refactor"
+    "username":"string",
+    "password":"string"
 }
 ```
 
@@ -103,8 +103,8 @@ boards/<str:id>
 ### Create User
 ```json
 {
-    "username":"test",
-    "password":"test"
+    "username":"string",
+    "password":"string"
 }
 ```
 
