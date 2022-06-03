@@ -24,8 +24,11 @@ class BoardCreate(APIView):
         serializer = BoardSerializer(data=request.data)
         if serializer.is_valid():
             #get resulting user model, then update board?
-            
-            serializer.save()
+            boards = serializer.save()
+            user = User.objects.filter(id=request.data["users"][0])
+            if(user):
+                boards.users.add(request.data["users"][0])
+                boards.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

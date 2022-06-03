@@ -74,14 +74,16 @@
     "tasks": "Array<String>"
 }
 ```
+
 ## API Endpoints
 
 ### Create Board
 
 ```json
 {
-    "username":"string",
-    "password":"string"
+    "username": "string",
+    "password": "string",
+    "users": ["a14c6de6-afd8-4b7a-b1d8-fe9f079c7f9a"]
 }
 ```
 
@@ -93,7 +95,7 @@
 }
 ```
 
-### Get Specific Board 
+### Get Specific Board
 
 ```json
 pass thru uri
@@ -101,10 +103,11 @@ boards/<str:id>
 ```
 
 ### Create User
+
 ```json
 {
-    "username":"string",
-    "password":"string"
+    "username": "string",
+    "password": "string"
 }
 ```
 
@@ -116,7 +119,7 @@ boards/<str:id>
 }
 ```
 
-### Get Specific User 
+### Get Specific User
 
 ```json
 pass thru uri
