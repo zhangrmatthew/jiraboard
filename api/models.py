@@ -14,6 +14,11 @@ class User(models.Model):
     password = models.CharField(max_length=20)
     boards = models.ManyToManyField(Board, related_name='users', blank=True)
 
+class Column(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=255)
+    board = models.ForeignKey(Board, on_delete=models.CASCADE)
+
 class Task(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255)
@@ -22,10 +27,5 @@ class Task(models.Model):
     assignment_date = models.DateTimeField
     description = models.TextField(blank=True,null=True)
     acceptance_criteria = models.TextField(blank=True,null=True)
+    column = models.ForeignKey(Column, on_delete=models.CASCADE)
     
-class Column(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=255)
-    board = models.ForeignKey(Board, on_delete=models.CASCADE)
-
-
