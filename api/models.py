@@ -12,6 +12,7 @@ class User(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
+    boards = models.ManyToManyField(Board, related_name='users', blank=True)
 
 class Task(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
